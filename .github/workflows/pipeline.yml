@@ -26,8 +26,29 @@ jobs:
         run: |
           python -m unittest test.py  # Replace with your test execution command (e.g., pytest)
 
-#      - name: Upload test results (optional)
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: test-results
-#          path: test_results.xml  # Replace with your test result output file (if using a framework that generates one)
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: ${{ always() }}  # Always run the deployment job, even if tests fail
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: |
+        # Your deployment script here
+        # Example:
+        echo "Deployment started..."
+        # ... your actual deployment commands ...
+      - name: Notify on Deployment Success
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,   
+
+              body: 'Deployment successful! 🚀'
+            })
