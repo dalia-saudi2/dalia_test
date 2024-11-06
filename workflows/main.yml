@@ -2,7 +2,7 @@ name: Test Calculator
 
 on:
   push:
-    branches: [ init-Code ]
+    branches: [ "master" ]
 
 jobs:
   test:
