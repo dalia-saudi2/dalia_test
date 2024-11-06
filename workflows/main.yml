@@ -3,7 +3,9 @@ name: Test Calculator
 on:
   push:
     branches: [ "master" ]
-
+  pull_request:
+    branches: [ "master" ]
+    
 jobs:
   test:
     runs-on: ubuntu-latest  # Replace with desired runner OS (e.g., macOS, Windows)
