@@ -39,7 +39,7 @@ jobs:
       - run: |
         # Your deployment script here
         # Example:
-        echo "Deployment started..."
+        # echo "Deployment started..."
         # ... your actual deployment commands ...
       - name: Notify on Deployment Success
         uses: actions/github-script@v5
