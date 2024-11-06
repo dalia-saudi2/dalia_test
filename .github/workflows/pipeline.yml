@@ -26,8 +26,8 @@ jobs:
         run: |
           python -m unittest test_calculator.py  # Replace with your test execution command (e.g., pytest)
 
-      - name: Upload test results (optional)
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-results
-          path: test_results.xml  # Replace with your test result output file (if using a framework that generates one)
+#      - name: Upload test results (optional)
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: test-results
+#          path: test_results.xml  # Replace with your test result output file (if using a framework that generates one)
