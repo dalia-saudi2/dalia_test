@@ -24,7 +24,7 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m unittest test_calculator.py  # Replace with your test execution command (e.g., pytest)
+          python -m unittest test.py  # Replace with your test execution command (e.g., pytest)
 
 #      - name: Upload test results (optional)
 #        uses: actions/upload-artifact@v2
